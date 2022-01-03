@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect,useState } from "react";
 import "./form.css"
 function Form(){
     const [form,setForm]=useState({
@@ -25,36 +25,36 @@ function Form(){
 
 
 
-// useEffect(()=>{
-//     getrecipe()
-// },[])
+useEffect(()=>{
+    getrecipe()
+},[])
 
-    // const getrecipe =()=>{
-    //     fetch("http:localhost:3001/recipe")
-    //     .then((data)=>data.json())
-    //     .then((res) =>{
-    //         setForm(res)
-    //     })
-    // }
+    const getrecipe =()=>{
+        fetch("http://localhost:3001/recipe")
+        .then((data)=>data.json())
+        .then((res) =>{
+            setForm(res)
+        })
+    }
 
 
     const addrecipe = ()=>{
 
-        //     const payload = {
-        //         title:form.title,
-        // ingredients:form.ingredients,
-        // cooking_time:form.cooking_time,
-        // image:form.image,
-        // instructions:form.instructions
-        //     }
+            const payload = {
+                title:form.title,
+        ingredients:form.ingredients,
+        cooking_time:form.cooking_time,
+        image:form.image,
+        instructions:form.instructions
+            }
 
-        //     fetch("http:localhost:3001/recipe",{
-        //         method:"POST",
-        //         body:JSON.stringify(payload),
-        //         headers:{
-        //             "content-type":"application/json"
-        //         }
-        //     })
+            fetch("http://localhost:3001/recipe",{
+                method:"POST",
+                body:JSON.stringify(payload),
+                headers:{
+                    "content-type":"application/json"
+                }
+            })
 
         
         }
@@ -69,10 +69,8 @@ function Form(){
             <input onChange={handlechange} type="text"  placeholder="image" name='image' />
             <input onChange={handlechange} type="text"  placeholder="add instructions" name='instructions' />
             <button onClick={addrecipe}>add recipe</button>
-        </div>,
-        <div>
-
         </div>
+        
         
    
     )
