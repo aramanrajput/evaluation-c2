@@ -1,4 +1,6 @@
 
+import "./card.css"
+
 import { useEffect,useState } from "react";
 
 function Card(){
@@ -7,15 +9,17 @@ function Card(){
     const [form,setForm]=useState([])
    
     useEffect(()=>{
-        getrecipe()
-    },)
+
+       getrecipe();
+
+    }, )
     
     const getrecipe =()=>{
         fetch("http://localhost:3001/recipe")
         .then((data)=>data.json())
         .then((res) =>{
           
-            setForm([res])
+            setForm(res)
             console.log(form)
         })
     }
@@ -24,7 +28,9 @@ function Card(){
 <>
     {form.map((e)=>(
        
-        <div>{e.title}</div>
+        <div className="box2"><h1>{e.title}</h1>
+        <h1>{e.cooking_time}</h1>
+        </div>
     ))}
    
 </>
