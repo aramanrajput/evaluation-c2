@@ -15,6 +15,14 @@
       "image": "https://www.jweekly.com/wp-content/uploads/2018/06/BLT_sandwich_on_toast-1.jpg",
       "instructions": "adfdsfsdfds",
       "id": 2
+    },
+    {
+      "title": "omelate",
+      "ingredients": "egg",
+      "cooking_time": "5min",
+      "image": "https://www.sweetysalado.com/wp-content/uploads/2019/03/Omelette-SyS.jpg",
+      "instructions": "dfgfdgdfg",
+      "id": 3
     }
   ]
 }
