@@ -28,8 +28,10 @@ function Card(){
 <>
     {form.map((e)=>(
        
-        <div className="box2"><h1>{e.title}</h1>
-        <h1>{e.cooking_time}</h1>
+        <div className="box2"><h1>title:{e.title}</h1>
+           
+        <h1>cooking time:{e.cooking_time}</h1>
+     <img src={e.image} alt="img"></img>
         </div>
     ))}
    
